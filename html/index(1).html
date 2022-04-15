@@ -1,0 +1,502 @@
+<!DOCTYPE html>
+
+<html>
+
+<head>
+	<title>shopping mall</title>
+	<meta charset="utf-8">
+
+	<style>
+
+		
+		* {margin:0; padding:0; box-sizing: border-box;}
+		ul,ol,li {list-style:none; float: left;}
+
+		header {width:1260px; height:255px; margin:0 auto;}
+
+		/*로그인*/
+		#logo {width:165px; height:70px; float:right; margin:50px 550px;}
+		#logo > img {width: 100%; height: 62px;}
+
+		/*#plus {width:150px; height:51px; margin: 20px 20px 0 30px; background-color: #666;}
+		#plus > img {width:41px; height:51px;}*/
+
+		#login {width:380px; height:40px; float:left;}
+		#login > ul {font-size:13px; color:#666;}
+		#login > ul > li {float:left; margin:10px 0 0 10px;}
+		#login > ul > li > a {text-decoration:none; color:#444;}
+
+		#loginnext {width:380px; height:40px; float:right;}
+		#loginnext > ul {font-size:13px; color:#666;}
+		#loginnext > ul > li {float:left; margin:10px 0 0 10px;}
+		#loginnext > ul > li > a {text-decoration:none; color:#444;}
+
+		#loginnext ul img {width: 23px; height: 23px; margin: 10px 0 0 10px;}
+
+		
+
+		nav {width:1260px; height:55px; float:left; margin:-10px 0px;}
+		nav > ul {font-size:16px; font-weight:bold;}
+		nav > ul > li {float:left; margin:15px 20px 15px 35px;}
+		nav > ul > li > a {text-decoration:none; color:#555;}
+		nav > ul > li > a:hover {color:gray;}
+
+
+/*슬라이더*/
+#slider {width:1900px; height:525px; margin:0 auto;}
+#slider > img {width: 100%; height: 100%;} 
+
+
+/*섹션-메인1*/
+#main1 {width:1260px; height:2750px; margin:40px auto; background-color:#3333;}
+#main1  h1 {text-align:center; padding:25px 0px; font-size: 23px;}
+#main1  h2 {text-align:center; margin:50px 0 -50px 0px; font-size: 21px;}
+
+/*인기 카테고리*/
+#category {width:985px; height:170px; margin:0 auto;}
+#category > .cbox {width: 100px; height: 140px; display: inline-block; margin: 15px 29px 15px 30px; text-align: center;}
+#category > .cbox > img {width: 60px; height: 60px; display:block; margin: 20px auto;}
+#category > .cbox > img > span {display: block;}
+
+
+
+/*실시간 베스트*/
+.best {width:1260px; height:340px; margin:80px auto;}
+.best > .bbox {width: 240px; height: 340px; background-color:#fff; display: inline-block; margin: 0 auto; overflow: hidden; box-shadow: 4px 4px 4px #eee; border-radius: 3px;}
+.best > .bbox:first-of-type {margin: 0 6px 0 0px;}
+.best > .bbox:nth-of-type(2) {margin: 0 4px 0 4px;}
+.best > .bbox:nth-of-type(3) {margin: 0 4px 0 4px;}
+.best > .bbox:nth-of-type(4) {margin: 0 4px 0 4px;}
+.best > .bbox:last-of-type {margin: 0 0 0 6px;}
+
+.best > .bbox > a > img {width:240px; height: 240px; transform: scale(1.0); transition: 0.5s;}
+.best > .bbox > a > img:hover {cursor: pointer; opacity: 0.7; transform: scale(1.2);}
+
+p > a {text-decoration: none; color: #333; font-size: 13px;}
+h5 > a {text-decoration: none; color: #333; font-size: 15px;}
+del {color: #bbb; font-size: 13px; float: left;}
+
+.best > .bbox > #h5after1 > a:after {content:" 13%"; color:#ef404a;}
+.best > .bbox > #h5after2 > a:after {content:" 32%"; color:#ef404a;}
+
+
+/*타임특가*/
+#time {width:1260px; height:450px; margin:80px auto;}
+#time > .tbox {width: 300px; height: 450px; background-color:#fff; display: inline-block; margin: 0 auto; text-align: center; overflow: hidden; box-shadow: 4px 4px 4px #eee; border-radius: 3px;}
+#time > .tbox:first-of-type {margin: 0 9px 0 0px;}
+#time > .tbox:nth-of-type(2) {margin: 0 6px 0 6px;}
+#time > .tbox:nth-of-type(3) {margin: 0 6px 0 6px;}
+#time > .tbox:last-of-type {margin: 0 0px 0 9px;}
+
+#time > .tbox > a > img {width: 300px; height: 300px;}
+
+
+/*블록 5개*/
+#square1 {width:620px; height:620px; display:inline-block; margin: 0 18px 14px 0px; float: left;}
+#square1  a  img {width: 100%; height: 100%;}
+
+#square3 {width:620px; height:300px; display:inline-block; margin: 0 0 14px 0px; float: right;}
+#square3  a  img {width: 100%; height: 100%;}
+
+#square4 {width:620px; height:300px; display:inline-block; margin: 0 14px 0 0px; float: left;}
+#square4  a  img {width: 100%; height: 100%;}
+
+#square5 {width:620px; height:620px; display:inline-block; margin: -320px 0 0 0px; float: right;}
+#square5  a  img {width: 100%; height: 100%;}
+
+
+/*섹션-메인2*/
+#main2 {width:1260px; height:2800px; margin:40px auto; background-color: #2222;}
+#main2  h1 {text-align:center; font-size: 23px; background-color:tomato;}
+#main2  h2 {text-align:center; font-size: 21px; background-color: tomato;}
+
+/*인기 키워드, 지금 만나는 신상*/
+#hot {width: 485px; height: 50px; background-color: #4444; margin: 40px auto 0px;}
+.keyword {width:1260px; height:450px; margin:80px auto;}
+
+.keyword > .tbox {width: 300px; height: 450px; background-color:#fff; display: inline-block; margin: 0 auto; text-align: center; overflow: hidden; box-shadow: 4px 4px 4px #eee; border-radius: 3px;}
+.keyword > .tbox:first-of-type {margin: 0 9px 0 0px;}
+.keyword > .tbox:nth-of-type(2) {margin: 0 6px 0 6px;}
+.keyword > .tbox:nth-of-type(3) {margin: 0 6px 0 6px;}
+.keyword > .tbox:last-of-type {margin: 0 0px 0 9px;}
+
+.keyword > .tbox > a > img {width: 300px; height: 300px;}
+
+/*추천 제품 영상*/
+#main3 {width:100%; height:500px; margin:0 auto; background-color:#1111;}
+#main3  h2 {text-align:center; margin:0px 0 -40px 0px; font-size: 21px;}
+#good {width:1260px; height: 400px; margin:80px auto;}
+#good > .gbox {width: 400px; height: 400px; background-color: #fff; display: inline-block; box-shadow: 4px 4px 4px #eee; border-radius: 3px;}
+#good > .gbox > a > img {width: 100%; height: 200px;}
+
+#good > .gbox:first-of-type {margin: 0 14px 0 0px;}
+#good > .gbox:nth-of-type(2) {margin: 0 10px 0 10px;}
+#good > .gbox:last-of-type {margin: 0 0px 0 14px;}
+
+/*푸터*/
+footer {width:1273px; height:653px; margin:40px auto 0px; background-color:#4444;}
+
+.ftbox {width:400px; height: 350px; background-color: red; display:inline-block; margin: 20px 8px; padding: 30px 10px;}
+
+</style>
+
+</head>
+
+<body>
+
+	<header>
+		<div id="login">
+			<ul>
+				<li><a href="#">로그인</a></li>
+				<li>|</li>
+				<li><a href="#">회원가입</a></li>
+				<li>|</li>
+				<li><a href="#">장바구니</a></li>
+				<li>|</li>
+				<li><a href="#">주문조회</a></li>
+				<li>|</li>
+				<li><a href="#">마이페이지</a></li>
+			</ul>
+		</div>
+
+		<div id="loginnext">
+			<ul>
+				<li><a href="#">포토리뷰</a></li>
+				<li>|</li>
+				<li><a href="#">커뮤니티</a></li>
+				<li>|</li>
+				<a href="https://www.facebook.com/SSUEIMSTORY" target="_blank" alt="페이스북"><span><img src="img/icon1.png" alt="페이스북"></span></a>
+			</ul>
+		</div>
+
+
+
+<!--
+		<div class="plus">
+		<img src="img/상품후기.png" alt="상품후기">
+		<img src="img/이벤트.png" alt="이벤트">
+		<img src="img/등급혜택.png" alt="등급혜택">
+	</div>
+-->	
+
+<div id="logo">
+	<img src="img/logo.png" alt="로고">
+</div>
+
+
+
+<nav>
+	<ul>
+		<li><a href="#">신상</a></li>
+		<li><a href="#">거실</a></li>
+		<li><a href="#">식탁/주방</a></li>
+		<li><a href="#">방</a></li>
+		<li><a href="#">현관/센서</a></li>
+		<li><a href="#">레일조명</a></li>
+		<li><a href="#">스탠드</a></li>
+		<li><a href="#">실외조명</a></li>
+		<li><a href="#">매입/다운라이트</a></li>
+		<li><a href="#">전구</a></li>
+		<li><a href="#">리퍼브/할인</a></li>
+	</ul>
+</nav>
+
+</header>
+
+<div id="slider">
+	<img src="img/bg.jpg" alt="슬라이더 이미지">
+
+</div>
+
+<!--섹션1-->
+<section id="main1">
+	<h1>인기 카테고리</h1>
+	<div id="category">
+		<div class="cbox"><img src="img/hot1.png" alt="카테고리1"><span>거실</span></div>
+		<div class="cbox"><img src="img/hot2.png" alt="카테고리2"><span>식탁/주방</span></div>
+		<div class="cbox"><img src="img/hot3.png" alt="카테고리3"><span>방</span></div>
+		<div class="cbox"><img src="img/hot4.png" alt="카테고리4"><span><span>포인트</span></div>
+		<div class="cbox"><img src="img/hot5.png" alt="카테고리5"><span>레일</span></div>
+		<div class="cbox"><img src="img/hot6.png" alt="카테고리6"><span>스탠드</span></div>
+	</div>
+
+
+	<h2>실시간 베스트</h2>
+	<div class="best">
+		<div class="bbox">
+			<a href="#"><img src="img/1.png" alt="이미지1" ></a>
+			<p><a href="#">코니아 7등 인테리어조명 (LED램프포함)</a></p>
+			<h5 id="h5after1"><a href="#">159,000원</a></h5>
+			<del>175,000원</del>
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/2.jpg" alt="이미지1" ></a>
+			<p><a href="#">루크 1등 플로어 스탠드조명</a></p>
+			<h5 id="h5after2"><a href="#">179,900원</a></h5>
+			<del>190,000원</del>
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/3.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/4.jpg" alt="이미지1" ></a>
+			<p><a href="#">로인 1등 단 스탠드조명</a></p>
+			<h5 id="h5after1"><a href="#">26,300원</a></h5>
+
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/5.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+
+
+	</div>
+
+	<div class="best">
+		<div class="bbox">
+			<a href="#"><img src="img/6.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/7.jpg" alt="이미지1" ></a>
+			<p><a href="#">LED 멜라토닌 다이앤 스탠드 조명</a></p>
+			<h5 id="h5after1"><a href="#">89,900원</a></h5>
+			<del>178,000원</del>
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/8.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/9.jpg" alt="이미지1" ></a>
+			<p><a href="#">LED 아로스 인테리어조명 30W</a></p>
+			<h5 id="h5after1"><a href="#">119,900원</a></h5>
+			<del>169,900원</del>
+		</div>
+
+		<div class="bbox">
+			<a href="#"><img src="img/10.jpg" alt="이미지1" ></a>
+			<p><a href="#">LED 마엘 플로어 스탠드조명</a></p>
+			<h5 id="h5after1"><a href="#">69,900원</a></h5>
+			<del>95,000원</del>
+		</div>
+	</div>
+
+	<h2>타임특가</h2>
+	<div id="time">
+		<div class="tbox">
+			<a href="#"><img src="img/5.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/5.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/5.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/5.jpg" alt="이미지1" ></a>
+			<p><a href="#">마켓비 LAFFA 펜던트등 E26 KS1516D 화이트</a></p>
+			<h5 id="h5after1"><a href="#">19,900원</a></h5>
+			<del>22,900원</del>
+		</div>
+	</div>
+
+	<article>
+		<div id="square1"><a href="#"><img src="img/square1.jpg" alt="이미지1" ></a></div>
+		<div id="square3"><a href="#"><img src="img/square4.jpg" alt="이미지1" ></a></div>
+		<div id="square4"><a href="#"><img src="img/square2.jpg" alt="이미지1" ></a></div>
+		<div id="square5"><a href="#"><img src="img/square5.jpg" alt="이미지1" ></a></div>
+	</article>
+
+</section>
+
+<section id="main2">
+	<!--섹션2-->
+
+	<h1>인기 키워드</h1>
+	<div id="hot"></div>
+	<div class="keyword">
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+	</div>
+
+	<div class="keyword">
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+	</div>
+
+	<h2>지금 만나는 신상</h2>
+	<div class="keyword">
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+	</div>
+
+	<div class="keyword">
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+
+		<div class="tbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+			<h5><a href="#">Oh dear, 감성에코백 추가 런칭</a></h5>
+			<p><a href="#">사랑스러운 피글렛 레터링 라인이 <br> 출시되었어요!</a></p>
+		</div>
+	</div>
+
+	
+
+
+</section>
+
+
+<section id="main3">
+	<!--섹션3-->
+	<h2>추천 제품 영상</h2>
+	<div id="good">
+		<div class="gbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+		</div>
+
+		<div class="gbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+		</div>
+
+		<div class="gbox">
+			<a href="#"><img src="img/1.jpg" alt="이미지1" ></a>
+		</div>
+	</div>
+</section>
+
+
+
+<footer>
+
+	<article>
+		<div class="ftbox">
+		</div>
+		<div class="ftbox">
+		</div>
+		<div class="ftbox">
+		</div>
+	</article>
+
+</footer>
+
+
+
+
+
+
+
+
+
+</body>
+
+
+
+</html>
